@@ -16,9 +16,6 @@ extern uint16_t adc_dma_buf[];
 // Forward declaration of the task function
 static void CANTaskFunction(void *argument);
 
-// Initialize (enable) the CAN peripheral
-static void CAN_HardwareInit(void);
-
 // Send data
 static void CAN_Send(uint16_t id, const uint8_t *data, uint8_t len);
 
@@ -81,36 +78,6 @@ static void CANTaskFunction(void *argument)
 }
 
 /**
-<<<<<<< HEAD
-=======
-  * @brief  Configure and start the CAN peripheral.
-  */
-static void CAN_HardwareInit(void)
-{
-    //Configure the CAN 
-    //accept all IDs
-    CAN_FilterTypeDef canFilterConfig;
-    canFilterConfig.FilterActivation = ENABLE;
-    canFilterConfig.FilterBank = 0;
-    canFilterConfig.FilterFIFOAssignment = CAN_FILTER_FIFO0;
-    canFilterConfig.FilterIdHigh = 0x0000;
-    canFilterConfig.FilterIdLow = 0x0000;
-    canFilterConfig.FilterMaskIdHigh = 0x0000;
-    canFilterConfig.FilterMaskIdLow = 0x0000;
-    canFilterConfig.FilterMode = CAN_FILTERMODE_IDMASK;
-    canFilterConfig.FilterScale = CAN_FILTERSCALE_32BIT;
-
-    if (HAL_CAN_ConfigFilter(&hcan2, &canFilterConfig) != HAL_OK)
-    {
-        // Filter config error
-        while (1);
-    }
-
-
-}
-
-/**
->>>>>>> e078477 (Fix Readme)
   * @brief  send data over CAN using STM32 HAL.
   * @param  id   : CAN Standard ID
   * @param  data : pointer to payload
