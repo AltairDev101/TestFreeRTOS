@@ -17,7 +17,7 @@ Additionally, the code implements temperature calculation based on the **Steinma
 ```bash
 git clone https://github.com/AltairDev101/TestFreeRTOS.git
 ```
-**Build the directory**:
+**Build**:
 ```bash
 mkdir build && cd build
 cmake ..
