@@ -1,4 +1,4 @@
-# Project: Example of Using FreeRTOS with ADC + DMA and CAN
+# Test FreeRTOS:
 This project demonstrates the operation of two tasks in a FreeRTOS environment:
 1. **First task** performs analog data acquisition using the ADC and DMA .
 2. **Second task** processes these data from a global buffer, using FreeRTOS notifications, and transmits them over the CAN bus.
