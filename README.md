@@ -22,5 +22,4 @@ git clone https://github.com/AltairDev101/TestFreeRTOS.git
 mkdir build && cd build
 cmake ..
 cmake --build .
-<<<<<<< HEAD
 ```
